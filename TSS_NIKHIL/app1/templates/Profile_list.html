@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Create Profile{% endblock %}
+{% block content %}
+
+<h2>Profile List</h2>
+<ul>
+    {% for profile in profiles %}
+        <li>{{ profile.name }} - <a href="{% url 'update_profile' profile.id %}">Edit</a> | <a href="{% url 'delete_profile' profile.id %}">Delete</a></li>
+    {% endfor %}
+    <a href="/">ADD USER</a>
+</ul>
+{%endblock%}
